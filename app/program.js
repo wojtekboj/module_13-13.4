@@ -3,6 +3,7 @@ var OSinfo = require('../modules/OSInfo');
 var time = require('../modules/time');
 
 process.stdin.setEncoding('utf-8');
+
 process.stdin.on('readable', function () {
     var input = process.stdin.read();
     if (input !== null) {

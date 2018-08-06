@@ -1,21 +1,13 @@
-var os = require('os');
+function time(osTime) {
+    var hours = osTime / 3600;
+    hours = Math.floor(hours);
+    var minutes = (osTime % 3600) / 60;
+    minutes = Math.floor(minutes);
+    var sec = (osTime % 3600) % 60;
+    sec = Math.floor(sec);
 
-String.prototype.toHHMMSS = function () {
-    var sec_num = parseInt(this, 10);
-    var hours = Math.floor(sec_num / 3600);
-    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-    var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-    if (hours < 10) {
-        hours = "0" + hours;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    return hours + ':' + minutes + ':' + seconds;
+    var formatedTime = hours + 'godz. ' + minutes + 'min. ' + sec + 'sek.';
+    return formatedTime;
 }
 
-exports.print = String.prototype.toHHMMSS;
+exports.print = time;

@@ -1,23 +1,23 @@
 var os = require('os');
-var time = require('../modules/time');
+var time = require('./time');
 
 function getOSinfo() {
     var type = os.type();
     if (type === 'Darwin') {
         type = 'OSX';
-    } else if (type === 'Windows_NT') {
+    } else if (type === 'Window_NT') {
         type = 'Windows';
     }
     var release = os.release();
     var cpu = os.cpus()[0].model;
-    var uptime = os.uptime().toString();
+    var uptime = os.uptime();
     var userInfo = os.userInfo();
     console.log('System:', type);
     console.log('Release:', release);
-    console.log('CPU model:', cpu);
-    console.log('Uptime:', uptime.toHHMMSS());
-    console.log('User name:', userInfo.username);
-    console.log('Home dir:', userInfo.homedir);
+    console.log('CPU model: ', cpu);
+    console.log('Uptime: ', time.print(uptime));
+    console.log('User name: ', userInfo.username);
+    console.log('Home dir: ', userInfo.homedir);
 }
 
 exports.print = getOSinfo;
