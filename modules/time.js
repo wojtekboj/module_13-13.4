@@ -1,3 +1,5 @@
+var os = require('os');
+
 function time(osTime) {
     var hours = osTime / 3600;
     hours = Math.floor(hours);
