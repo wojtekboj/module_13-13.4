@@ -8,8 +8,7 @@ function time(osTime) {
     var sec = (osTime % 3600) % 60;
     sec = Math.floor(sec);
 
-    var formatedTime = hours + 'godz. ' + minutes + 'min. ' + sec + 'sek.';
-    return formatedTime;
+    return hours + 'godz. ' + minutes + 'min. ' + sec + 'sek.';
 }
 
 exports.print = time;
