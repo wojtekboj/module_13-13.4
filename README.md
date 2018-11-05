@@ -20,7 +20,7 @@ Command
 <code>node program.js - running script</code>
 * /exit - quitting app
 * /sayhello - statement "Hello"
-* /getOSinfo - system informatio
+* /getOSinfo - system information
 
 ## Technologies
 Project is created with:
